@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Support\Str;
 
 if (!function_exists('active')) {
 
@@ -15,14 +16,14 @@ if (!function_exists('active')) {
 
         // remove excluded routes
         foreach ($excludeRoutes as $route) {
-            if (str_is($route, $currentRoute)) {
+            if (Str::is($route, $currentRoute)) {
                 return $notActive;
             }
         }
 
         // check wanted routes
         foreach ($routes as $route) {
-            return (str_is($route, $currentRoute)) ? $active : $notActive;
+            return (Str::is($route, $currentRoute)) ? $active : $notActive;
         }
     }
 }
