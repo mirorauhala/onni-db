@@ -29,9 +29,8 @@
                                             Actions <span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu">
-                                            <li><a href="{{ route('question.edit', ['question' => $question->id]) }}">Edit</a></li>
-                                            <li role="separator" class="divider"></li>
-                                            <li><a href="{{ route('question.delete', ['question' => $question->id]) }}">Delete</a></li>
+                                            <li><a class="dropdown-item" href="{{ route('question.edit', ['question' => $question->id]) }}">Edit</a></li>
+                                            <li><a class="dropdown-item" href="{{ route('question.delete', ['question' => $question->id]) }}">Delete</a></li>
                                         </ul>
                                     </div>
                                 </td>
