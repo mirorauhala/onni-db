@@ -1,12 +1,12 @@
 <?php
 
-namespace OWS\Http\Controllers\Questions;
+namespace App\Http\Controllers\Questions;
 
-use OWS\{
+use App\{
     Category,
     Question
 };
-use OWS\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class QuestionController extends Controller
@@ -166,7 +166,7 @@ class QuestionController extends Controller
     /**
      * Store new questions.
      *
-     * @return OWS\Question
+     * @return App\Question
      */
     private function store_question(Request $request)
     {
@@ -191,7 +191,7 @@ class QuestionController extends Controller
     /**
      * Update questions.
      *
-     * @return OWS\Question
+     * @return App\Question
      */
     private function update_question($question, Request $request)
     {

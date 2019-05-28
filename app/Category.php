@@ -1,6 +1,6 @@
 <?php
 
-namespace OWS;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -22,6 +22,6 @@ class Category extends Model
      */
     public function questions()
     {
-        return $this->hasMany('OWS\Question');
+        return $this->hasMany('App\Question');
     }
 }

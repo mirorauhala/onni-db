@@ -1,9 +1,9 @@
 <?php
 
-namespace OWS\Http\Controllers\Categories;
+namespace App\Http\Controllers\Categories;
 
-use OWS\Category;
-use OWS\Http\Controllers\Controller;
+use App\Category;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller

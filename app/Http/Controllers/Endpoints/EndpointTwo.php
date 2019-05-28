@@ -1,10 +1,10 @@
 <?php
 
-namespace OWS\Http\Controllers\Endpoints;
+namespace App\Http\Controllers\Endpoints;
 
 use http\Env\Response;
 use Illuminate\Http\Request;
-use OWS\{
+use App\{
     Question,
     Http\Controllers\Controller
 };

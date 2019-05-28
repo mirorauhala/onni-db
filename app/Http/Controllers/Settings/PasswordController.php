@@ -1,11 +1,11 @@
 <?php
 
-namespace OWS\Http\Controllers\Settings;
+namespace App\Http\Controllers\Settings;
 
 use Auth;
 use Illuminate\Http\Request;
-use OWS\Rules\CurrentPassword;
-use OWS\Http\Controllers\Controller;
+use App\Rules\CurrentPassword;
+use App\Http\Controllers\Controller;
 
 class PasswordController extends Controller
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace OWS\Http\Controllers\Endpoints;
+namespace App\Http\Controllers\Endpoints;
 
-use OWS\Question;
-use OWS\Http\Controllers\Controller;
+use App\Question;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class EndpointOne extends Controller

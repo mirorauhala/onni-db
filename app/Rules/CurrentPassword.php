@@ -1,6 +1,6 @@
 <?php
 
-namespace OWS\Rules;
+namespace App\Rules;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;

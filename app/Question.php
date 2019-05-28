@@ -1,6 +1,6 @@
 <?php
 
-namespace OWS;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 

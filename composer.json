@@ -31,7 +31,7 @@
     },
     "autoload": {
         "psr-4": {
-            "OWS\\": "app/"
+            "App\\": "app/"
         },
         "files": [
             "app/helper.php"

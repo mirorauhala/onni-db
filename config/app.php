@@ -171,11 +171,11 @@ return [
         /*
          * Application Service Providers...
          */
-        OWS\Providers\AppServiceProvider::class,
-        OWS\Providers\AuthServiceProvider::class,
-        // OWS\Providers\BroadcastServiceProvider::class,
-        OWS\Providers\EventServiceProvider::class,
-        OWS\Providers\RouteServiceProvider::class,
+        App\Providers\AppServiceProvider::class,
+        App\Providers\AuthServiceProvider::class,
+        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
 
     ],
 
