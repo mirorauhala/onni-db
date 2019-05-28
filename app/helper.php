@@ -9,7 +9,7 @@ if (!function_exists('active')) {
      *
      * @return string
      */
-    function active($routes, $excludeRoutes = array(), $active = ' class=active', $notActive = '')
+    function active($routes, $excludeRoutes = array(), $active = ' active', $notActive = '')
     {
         // get current route
         $currentRoute = Route::currentRouteName();
