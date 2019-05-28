@@ -2,20 +2,18 @@
 
 @section('content')
 <div class="container">
-    <div class="row">
-        <div class="col-md-4 col-md-offset-4">
-            <div class="panel panel-danger">
-                <div class="panel-heading">Delete question!</div>
-
-                <div class="panel-body">
-
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Delete question</h5>
                     <p>Are you sure you want to delete the following question and its answers? This action cannot be undone.</p>
 
                     <p><b>{{ $question->question }}</b></p>
                     <form method="post" action="{{ route('question.delete', ['question' => $question->id]) }}" autocomplete="off">
                         {{ csrf_field() }}
                         <input type="submit" class="btn btn-danger btn-block" value="Remove">
-                        <a class="btn btn-default btn-block">Take me back to safety</a>
+                        <a class="btn btn-light btn-block" href="{{ route('questions.index') }}">Take me back to safety</a>
                     </form>
 
                 </div>
