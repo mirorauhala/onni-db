@@ -3,8 +3,7 @@
 @section('content')
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-12">
-
+        <div class="col-12">
             @if(count($questions))
                 {{ $questions->links() }}
                 <table class="table">
