@@ -22,7 +22,6 @@
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item{{ active(['question*']) }}"><a class="nav-link" href="{{ route('question.all') }}">Questions</a></li>
                         <li class="nav-item{{ active(['category*']) }}"><a class="nav-link" href="{{ route('category.all') }}">Categories</a></li>
-                        <li class="nav-item{{ active(['settings*']) }}"><a class="nav-link" href="{{ route('settings.profile') }}">Settings</a></li>
                     </ul>
                     <ul class="navbar-nav">
                         @if (Auth::guest())
@@ -35,7 +34,7 @@
                                 </a>
 
                                 <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                                    <li><a class="dropdown-item" href="{{ route('settings.profile') }}">Settings</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('settings') }}">Settings</a></li>
                                     <li><a class="dropdown-item" href="#"
                                             onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">

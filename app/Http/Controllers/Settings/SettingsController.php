@@ -23,37 +23,8 @@ class SettingsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function show(Request $request)
     {
-        $user = Auth::user();
-
-        return view('settings.profile')->with(['user' => $user]);
-    }
-
-    /**
-     * Store settings to database.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        $this->validate($request, [
-            'name'  => 'required|min:1',
-            'email' => 'required|email',
-        ]);
-
-        Auth::user()->update(
-            [
-                'name'              => $request->name,
-                'email'             => $request->email,
-            ]
-        );
-
-        return redirect()
-            ->route('settings.profile')
-            ->with([
-                'flash_status'  => 'success',
-                'flash_message' => 'Settings saved.',
-            ]);
+        return view('settings.show')->with(['user' => $request->user()]);
     }
 }

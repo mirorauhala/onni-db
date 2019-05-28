@@ -2,13 +2,16 @@
 
 @section('content')
 <div class="container">
-    <div class="row">
+    <header class="row pt-5 pb-4">
+        <div class="col-12">
+            <h1 class="text-center">Settings / Account</h1>
+        </div>
+    </header>
+    <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="panel panel-default">
-                <div class="panel-heading">Settings</div>
-
-                <div class="panel-body">
-                    <form method="post" action="{{ route('settings.profile') }}">
+            <div class="card">
+                <div class="card-body">
+                    <form method="post" action="{{ route('settings.account') }}">
                         {{ csrf_field() }}
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name" class="control-label">Name</label>
@@ -32,13 +35,11 @@
                                 </span>
                             @endif
                         </div>
-                        <button type="submit" class="btn btn-default">Update</button>
+                        <button type="submit" class="btn btn-primary px-4">Update</button>
                     </form>
                 </div>
-
             </div>
         </div>
-        @include('partials.settings-menu')
     </div>
 </div>
 @endsection

@@ -40,9 +40,12 @@ Route::post('/category/edit/{question}', 'Categories\CategoryController@update')
 Route::get('/category/delete/{question}', 'Categories\CategoryController@delete')->name('category.delete');
 Route::post('/category/delete/{question}', 'Categories\CategoryController@destroy');
 
-/* Settings */
-Route::get('/settings', 'Settings\SettingsController@index')->name('settings.profile');
-Route::post('/settings', 'Settings\SettingsController@store');
+Route::prefix('/settings')->group(function() {
+    Route::get('/', 'Settings\SettingsController@show')->name('settings');
+    
+    Route::get('/account', 'Settings\SettingsAccountController@show')->name('settings.account');
+    Route::post('/account', 'Settings\SettingsAccountController@update');
 
-Route::get('/settings/password', 'Settings\PasswordController@index')->name('settings.password');
-Route::post('/settings/password', 'Settings\PasswordController@store');
+    Route::get('/password', 'Settings\SettingsPasswordController@show')->name('settings.password');
+    Route::post('/password', 'Settings\SettingsPasswordController@update');
+});

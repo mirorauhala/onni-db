@@ -4,10 +4,9 @@ namespace App\Http\Controllers\Settings;
 
 use Auth;
 use Illuminate\Http\Request;
-use App\Rules\CurrentPassword;
 use App\Http\Controllers\Controller;
 
-class PasswordController extends Controller
+class SettingsAccountController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -20,36 +19,36 @@ class PasswordController extends Controller
     }
 
     /**
-     * Show password change form.
+     * Show the application settings.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function show()
     {
         $user = Auth::user();
 
-        return view('settings.password')->with(['user' => $user]);
+        return view('settings.account')->with(['user' => $user]);
     }
 
     /**
-     * Store settings to database.
+     * Update account data.
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function update(Request $request)
     {
         $this->validate($request, [
-            'current_password'          => ['required', 'string', new CurrentPassword()],
-            'new_password'              => 'required|string|min:8|different:current_password',
-            'new_password_confirmation' => 'required|string|same:new_password',
+            'name'  => 'required|min:1',
+            'email' => 'required|email',
         ]);
 
-        auth()->user()->update([
-            'password' => bcrypt($request->new_password),
+        $request->user()->update([
+            'name'  => $request->name,
+            'email' => $request->email,
         ]);
 
         return redirect()
-            ->route('settings.password')
+            ->route('settings.account')
             ->with([
                 'flash_status'  => 'success',
                 'flash_message' => 'Settings saved.',

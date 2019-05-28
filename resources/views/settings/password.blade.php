@@ -2,12 +2,15 @@
 
 @section('content')
 <div class="container">
-    <div class="row">
+    <header class="row pt-5 pb-4">
+        <div class="col-12">
+            <h1 class="text-center">Settings / Security</h1>
+        </div>
+    </header>
+    <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="panel panel-default">
-                <div class="panel-heading">Settings</div>
-
-                <div class="panel-body">
+            <div class="card">
+                <div class="card-body">
                     <form method="post" action="{{ route('settings.password') }}">
                         {{ csrf_field() }}
                         <div class="form-group">
@@ -51,7 +54,6 @@
                 </div>
             </div>
         </div>
-        @include('partials.settings-menu')
     </div>
 </div>
 @endsection
