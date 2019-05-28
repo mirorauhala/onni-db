@@ -35,9 +35,8 @@
                                 </a>
 
                                 <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                                    <li class="dropdown-item"><a href="{{ route('settings.profile') }}">Settings</a></li>
-                                    <li class="dropdown-item">
-                                        <a href="{{ route('logout') }}"
+                                    <li><a class="dropdown-item" href="{{ route('settings.profile') }}">Settings</a></li>
+                                    <li><a class="dropdown-item" href="#"
                                             onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">
                                             Logout
