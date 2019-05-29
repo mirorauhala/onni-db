@@ -27,7 +27,7 @@ class CategoryController extends Controller
     {
         $categories = Category::paginate(30);
 
-        return view('categories.all')->with([
+        return view('categories.index')->with([
             'categories' => $categories
         ]);
     }

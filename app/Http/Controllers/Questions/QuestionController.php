@@ -30,7 +30,7 @@ class QuestionController extends Controller
     {
         $questions = Question::paginate(30);
 
-        return view('questions.all')->with([
+        return view('questions.index')->with([
             'questions' => $questions
         ]);
     }
@@ -40,10 +40,10 @@ class QuestionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function new()
+    public function create()
     {
         $categories = Category::all();
-        return view('questions.new')
+        return view('questions.create')
             ->with([
                 'categories' => $categories
             ]);
