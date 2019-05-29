@@ -26,7 +26,6 @@
                     <ul class="navbar-nav">
                         @if (Auth::guest())
                             <li class="nav-item{{ active(['login*']) }}"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
-                            <li class="nav-item{{ active(['register*']) }}"><a class="nav-link" href="{{ route('register') }}">Register</a></li>
                         @else
                             <li class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

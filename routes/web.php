@@ -8,7 +8,11 @@
 */
 
 /* Laravel authentication routes */
-Auth::routes();
+Auth::routes([
+    'register' => false,
+    'reset' => false,
+    'verify' => false
+]);
 
 /* List questions */
 Route::get('/', 'Questions\QuestionController@index')->name('question.all');
