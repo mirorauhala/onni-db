@@ -31,6 +31,10 @@
                 <button type="submit" class="btn btn-primary btn-lg btn-block mb-3">
                     Login
                 </button>
+                <a class="d-block text-center text-muted" href="#">
+                    Forgot Your Password?
+                </a>
+                <!-- TODO: make a artisan command for changing the password. -->
             </form>
         </div>
     </div>
