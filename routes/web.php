@@ -30,7 +30,7 @@ Route::get('/delete/{question}', 'Questions\QuestionController@delete')->name('q
 Route::post('/delete/{question}', 'Questions\QuestionController@destroy');
 
 /* List categories */
-Route::get('/category/all', 'Categories\CategoryController@index')->name('category.all');
+Route::get('/category', 'Categories\CategoryController@index')->name('category.all');
 
 // New category
 Route::get('/category/new', 'Categories\CategoryController@new')->name('category.new');

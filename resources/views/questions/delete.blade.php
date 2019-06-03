@@ -13,7 +13,7 @@
                     <form method="post" action="{{ route('question.delete', ['question' => $question->id]) }}" autocomplete="off">
                         {{ csrf_field() }}
                         <input type="submit" class="btn btn-danger btn-block" value="Remove">
-                        <a class="btn btn-light btn-block" href="{{ route('questions.index') }}">Take me back to safety</a>
+                        <a class="btn btn-light btn-block" href="{{ route('question.all') }}">Take me back to safety</a>
                     </form>
 
                 </div>
