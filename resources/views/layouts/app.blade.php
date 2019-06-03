@@ -20,12 +20,12 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item{{ active(['question*']) }}"><a class="nav-link" href="{{ route('question.all') }}">Questions</a></li>
-                        <li class="nav-item{{ active(['category*']) }}"><a class="nav-link" href="{{ route('category.all') }}">Categories</a></li>
+                        <li class="nav-item{{ active(['question*']) }}"><a class="nav-link" href="{{ route('question.all') }}">{{ __('nav.questions') }}</a></li>
+                        <li class="nav-item{{ active(['category*']) }}"><a class="nav-link" href="{{ route('category.all') }}">{{ __('nav.categories') }}</a></li>
                     </ul>
                     <ul class="navbar-nav">
                         @if (Auth::guest())
-                            <li class="nav-item{{ active(['login*']) }}"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
+                            <li class="nav-item{{ active(['login*']) }}"><a class="nav-link" href="{{ route('login') }}">{{ __('nav.login') }}</a></li>
                         @else
                             <li class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -37,7 +37,7 @@
                                     <li><a class="dropdown-item" href="#"
                                             onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">
-                                            Logout
+                                            {{ __('nav.logout') }}
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
