@@ -6,7 +6,7 @@
         <div class="col-12">
             @if(count($categories))
                 {{ $categories->links() }}
-                <table class="table">
+                <table class="table table-hover">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -16,7 +16,7 @@
                     </thead>
                     <tbody>
                         @foreach($categories as $category)
-                            <tr>
+                            <tr class="cursor-pointer">
                                 <td>{{ $category->id }}</td>
                                 <td>{{ $category->category }}</td>
                                 <td>
