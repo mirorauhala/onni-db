@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Settings;
 
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
 
 class SettingsAccountController extends Controller
@@ -39,12 +40,15 @@ class SettingsAccountController extends Controller
     {
         $this->validate($request, [
             'name'  => 'required|min:1',
-            'email' => 'required|email',
+            'username' => [
+                'required',
+                Rule::unique('users')->ignore($request->user()->id)
+            ]
         ]);
 
         $request->user()->update([
             'name'  => $request->name,
-            'email' => $request->email,
+            'username' => $request->username,
         ]);
 
         return redirect()

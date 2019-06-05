@@ -24,14 +24,14 @@
                                 </span>
                             @endif
                         </div>
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="control-label">Name</label>
+                        <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
+                            <label for="username" class="control-label">Username</label>
 
-                            <input type="text" class="form-control" id="email" name="email" placeholder="Your email" value="{{ Auth::user()->email }}">
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Your username" value="{{ Auth::user()->username }}">
 
-                            @if ($errors->has('email'))
+                            @if ($errors->has('username'))
                                 <span class="help-block">
-                                    <strong>{{ $errors->first('email') }}</strong>
+                                    <strong>{{ $errors->first('username') }}</strong>
                                 </span>
                             @endif
                         </div>
