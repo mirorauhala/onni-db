@@ -11,6 +11,8 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class QuestionCreateTest extends TestCase
 {
+    use DatabaseMigrations;
+
     /**
      * Test user can create a question.
      *
@@ -39,7 +41,7 @@ class QuestionCreateTest extends TestCase
     }
 
     /**
-     * Test user can create a question.
+     * Category is a required field.
      *
      * @return void
      */
@@ -48,7 +50,6 @@ class QuestionCreateTest extends TestCase
         $user = factory(User::class)->create();
 
         $payload = [
-            'category' => null,
             'question' => 'This is a question?',
             'difficulty' => 1,
             'explanation' => 'This is the explanation.',
@@ -61,6 +62,7 @@ class QuestionCreateTest extends TestCase
         $response = $this->actingAs($user)->post(route('question.store'), $payload);
 
         $response->assertStatus(302);
-        $this->assertDatabaseHas('questions', Arr::except($payload, ['category']));
+        $response->assertSessionHasErrors('category');
+        $this->assertDatabaseMissing('questions', $payload);
     }
 }
