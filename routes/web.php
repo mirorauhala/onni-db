@@ -18,8 +18,8 @@ Auth::routes([
 Route::get('/', 'Questions\QuestionController@index')->name('question.all');
 
 // New question
-Route::get('/new', 'Questions\QuestionController@new')->name('question.new');
-Route::post('/new', 'Questions\QuestionController@store');
+Route::get('/create', 'Questions\QuestionController@create')->name('question.create');
+Route::post('/create', 'Questions\QuestionController@store')->name('question.store');
 
 // Edit question
 Route::get('/edit/{question}', 'Questions\QuestionController@edit')->name('question.edit');

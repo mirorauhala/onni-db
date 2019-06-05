@@ -9,7 +9,7 @@
 
                 <div class="panel-body">
                     @if(count($categories) > 0)
-                        <form method="post" action="{{ route('question.new') }}" autocomplete="off">
+                        <form method="post" action="{{ route('question.create') }}" autocomplete="off">
                             {{ csrf_field() }}
 
                             <div class="form-group{{ $errors->has('category') ? ' has-error' : '' }}">
