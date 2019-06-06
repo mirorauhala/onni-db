@@ -4,7 +4,10 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+@import '~bootstrap-vue/src/index.scss';
 
 .cursor-pointer {
     cursor: pointer;
 }
+
+[v-cloak] { display: none; }
