@@ -12,44 +12,33 @@
     </head>
     <body>
         <div id="app" class="pt-5 mt-4">
-            <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
-                <a class="navbar-brand" href="{{ route('question.all') }}">{{ config('app.name') }}</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <b-navbar toggleable="sm" fixed="top">
+                <b-navbar-brand href="{{ route('question.all') }}">{{ config('app.name') }}</b-navbar-brand>
+                <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item{{ active(['question*']) }}"><a class="nav-link" href="{{ route('question.all') }}">{{ __('nav.questions') }}</a></li>
-                        <li class="nav-item{{ active(['category*']) }}"><a class="nav-link" href="{{ route('category.all') }}">{{ __('nav.categories') }}</a></li>
-                    </ul>
-                    <ul class="navbar-nav">
+                <b-collapse id="nav-collapse" is-nav>
+                    <b-navbar-nav>
+                        <b-nav-item href="{{ route('question.all') }}" {{ active(['question*']) }}>{{ __('nav.questions') }}</b-nav-item>
+                        <b-nav-item href="{{ route('category.all') }}" {{ active(['category*']) }}>{{ __('nav.categories') }}</b-nav-item>
+                    </b-navbar-nav>
+
+                    <b-navbar-nav class="ml-auto">
                         @if (Auth::guest())
-                            <li class="nav-item{{ active(['login*']) }}"><a class="nav-link" href="{{ route('login') }}">{{ __('nav.login') }}</a></li>
+                            <b-nav-item href="{{ route('login') }}" {{ active(['login*']) }}>{{ __('nav.login') }}</b-nav-item>
                         @else
-                            <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                                    <li><a class="dropdown-item" href="{{ route('settings') }}">Settings</a></li>
-                                    <li><a class="dropdown-item" href="#"
-                                            onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();">
-                                            {{ __('nav.logout') }}
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
+                            <b-nav-item-dropdown text="{{ Auth::user()->name }}" right>
+                                <b-dropdown-item href="{{ route('settings') }}">Settings</b-dropdown-item>
+                                <b-dropdown-item href="#"
+                                                onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">{{ __('nav.logout') }}</b-dropdown-item>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </b-nav-item-dropdown>
                         @endif
-                    </ul>
-                </div>
-            </nav>
+                    </b-navbar-nav>
+                </b-collapse>
+            </b-navbar>
 
             @yield('content')
         </div>
