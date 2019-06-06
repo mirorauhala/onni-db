@@ -31,10 +31,23 @@
                 <button type="submit" class="btn btn-primary btn-lg btn-block mb-3">
                     Login
                 </button>
-                <a class="d-block text-center text-muted" href="#">
-                    Forgot Your Password?
-                </a>
-                <!-- TODO: make a artisan command for changing the password. -->
+
+                <b-link class="d-block text-center text-muted" v-b-modal.passwordmodal>Forgot Your Password?</b-link>
+                
+                <b-modal id="passwordmodal" title="Forgot Your Password?" ok-only v-cloak>
+                    <h1 class="h4">Easy</h1>
+                    <p>Ask your teacher. They can easily reset the password using teacher account.</p>
+
+                    <b-link class="h4 d-block text-decoration-none" v-b-toggle.advanced variant="primary">Advanced</b-link>
+                    <b-collapse id="advanced" class="mt-2">
+                        <p>To force reset a password for a given account, you need to SSH into the server and run the following command:</p>
+                        <p>
+                            <code class="d-block">cd /var/www/onni</code>
+                            <code class="d-block">php artisan onni:reset &lt;USERNAME&gt;</code>
+                        </p>
+                        <p>A random password will be set after running the command.</p>
+                    </b-collapse>                    
+                </b-modal>
             </form>
         </div>
     </div>
