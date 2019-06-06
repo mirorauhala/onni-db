@@ -12,7 +12,7 @@
     </head>
     <body>
         <div id="app" class="pt-5 mt-4">
-            <b-navbar toggleable="sm" fixed="top">
+            <b-navbar toggleable="sm" variant="light" fixed="top">
                 <b-navbar-brand href="{{ route('question.all') }}">{{ config('app.name') }}</b-navbar-brand>
                 <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
