@@ -23,11 +23,11 @@ Route::post('/create', 'Questions\QuestionController@store')->name('question.sto
 
 // Edit question
 Route::get('/edit/{question}', 'Questions\QuestionController@edit')->name('question.edit');
-Route::post('/edit/{question}', 'Questions\QuestionController@update');
+Route::post('/edit/{question}', 'Questions\QuestionController@update')->name('question.update');
 
 // Delete question
 Route::get('/delete/{question}', 'Questions\QuestionController@delete')->name('question.delete');
-Route::post('/delete/{question}', 'Questions\QuestionController@destroy');
+Route::post('/delete/{question}', 'Questions\QuestionController@destroy')->name('question.destroy');
 
 /* List categories */
 Route::get('/category', 'Categories\CategoryController@index')->name('category.all');

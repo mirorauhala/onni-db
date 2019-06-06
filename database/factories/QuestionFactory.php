@@ -15,6 +15,7 @@ $factory->define(Question::class, function (Faker $faker) {
             return mt_rand(1,3);
         },
         'explanation' => $faker->sentence,
+        'is_enabled' => true,
         'answer1' => $faker->sentence,
         'answer2' => $faker->sentence,
         'answer3' => $faker->sentence,
