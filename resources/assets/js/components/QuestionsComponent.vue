@@ -2,7 +2,7 @@
     <div>
 
         <form>
-            <b-form-input v-model="search" placeholder="Enter your name"></b-form-input>
+            <b-form-input v-model="search" placeholder="Search a question..."></b-form-input>
         </form>
         
         <b-table 
