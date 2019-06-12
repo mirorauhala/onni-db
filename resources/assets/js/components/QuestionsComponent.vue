@@ -1,11 +1,10 @@
 <template>
     <div>
-
         <form>
             <b-form-input v-model="search" placeholder="Search a question..."></b-form-input>
         </form>
-        
-        <b-table 
+
+        <b-table
             hover
             :items="items"
             :fields="fields"
@@ -23,8 +22,6 @@
                 </b-button>
             </template>
         </b-table>
-
-        
     </div>
 </template>
 

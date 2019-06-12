@@ -33,7 +33,7 @@
                 </button>
 
                 <b-link class="d-block text-center text-muted" v-b-modal.passwordmodal>Forgot Your Password?</b-link>
-                
+
                 <b-modal id="passwordmodal" title="Forgot Your Password?" ok-only v-cloak>
                     <h1 class="h4">Easy</h1>
                     <p>Ask your teacher. They can easily reset the password using teacher account.</p>
@@ -46,7 +46,7 @@
                             <code class="d-block">php artisan onni:reset &lt;USERNAME&gt;</code>
                         </p>
                         <p>A random password will be set after running the command.</p>
-                    </b-collapse>                    
+                    </b-collapse>
                 </b-modal>
             </form>
         </div>

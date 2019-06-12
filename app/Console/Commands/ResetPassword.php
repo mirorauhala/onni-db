@@ -46,10 +46,10 @@ class ResetPassword extends Command
         }
 
         $this->line('This action will forcefully change the password. This action cannot be undone.');
-        
+
         if ($this->confirm('Do you wish to continue?')) {
             $random = bin2hex(random_bytes(8));
-        
+
             $user->update([
                 'password' => bcrypt($random)
             ]);

@@ -46,7 +46,7 @@ Route::post('/category/delete/{question}', 'Categories\CategoryController@destro
 
 Route::prefix('/settings')->group(function() {
     Route::get('/', 'Settings\SettingsController@show')->name('settings');
-    
+
     Route::get('/account', 'Settings\SettingsAccountController@show')->name('settings.account');
     Route::post('/account', 'Settings\SettingsAccountController@update');
 
