@@ -10,7 +10,7 @@
                     window.Questions = {!! $questions->toJSON() !!}
                 </script>
                 <o-questions></o-questions>
-                {{ $questions->links() }}
+                <!-- TODO: use Vue pagination -->
             @else
                 <p>There are no questions.</p>
             @endif
