@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 
 /**
  * For documentation see README.md and ./docs
