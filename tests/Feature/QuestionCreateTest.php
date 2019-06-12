@@ -2,7 +2,8 @@
 
 namespace Tests\Feature;
 
-use App\{Category, User};
+use App\Category;
+use App\User;
 use Tests\TestCase;
 use Illuminate\Support\Arr;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
@@ -17,7 +18,8 @@ class QuestionCreateTest extends TestCase
     protected $user;
     protected $category;
 
-    public function setUp() : void {
+    public function setUp() : void
+    {
         parent::setUp();
         $this->user = factory(User::class)->create();
         $this->category = factory(Category::class)->create();

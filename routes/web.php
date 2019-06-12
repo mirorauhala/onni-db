@@ -44,7 +44,7 @@ Route::post('/category/edit/{question}', 'Categories\CategoryController@update')
 Route::get('/category/delete/{question}', 'Categories\CategoryController@delete')->name('category.delete');
 Route::post('/category/delete/{question}', 'Categories\CategoryController@destroy');
 
-Route::prefix('/settings')->group(function() {
+Route::prefix('/settings')->group(function () {
     Route::get('/', 'Settings\SettingsController@show')->name('settings');
 
     Route::get('/account', 'Settings\SettingsAccountController@show')->name('settings.account');

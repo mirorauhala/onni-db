@@ -4,14 +4,13 @@ namespace App\Http\Controllers\Endpoints;
 
 use http\Env\Response;
 use Illuminate\Http\Request;
-use App\{
-    Question,
-    Http\Controllers\Controller
-};
+use App\Question;
+use App\Http\Controllers\Controller;
 
 class EndpointTwo extends Controller
 {
-    public function getQuestion(Request $request) {
+    public function getQuestion(Request $request)
+    {
         $category = $request->query('category');
         // Boolean to enable Construct 2 friendly response.
         $depression = $request->query('depression', true);

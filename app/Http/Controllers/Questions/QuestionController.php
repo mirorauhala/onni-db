@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers\Questions;
 
-use App\{
-    Category,
-    Question
-};
+use App\Category;
+use App\Question;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 

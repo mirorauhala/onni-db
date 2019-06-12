@@ -40,7 +40,7 @@ class ResetPassword extends Command
     {
         $user = User::where('username', '=', $this->argument('username'))->first();
 
-        if(empty($user)) {
+        if (empty($user)) {
             $this->error('User not found.');
             exit();
         }
