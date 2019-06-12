@@ -12,7 +12,13 @@ class Question extends Model
      * @var array
      */
     protected $fillable = [
-        'question', 'difficulty', 'explanation', 'is_enabled', 'answer1',
-        'answer2', 'answer3', 'answer4'
+        'question',
+        'difficulty',
+        'explanation',
+        'is_enabled',
+        'answer1',
+        'answer2',
+        'answer3',
+        'answer4'
     ];
 }
