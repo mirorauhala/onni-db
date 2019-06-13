@@ -31,7 +31,7 @@ at 60 requests per minute. This quota is shared across all versions of the API.
 The server returns the limit and the remaining quota in its headers.
 
 ```http
-GET http://db-omaonni.fi/api/v3/questions
+GET https://db.omaonni.fi/api/v3/questions
 
 Status: 200 OK
 X-RateLimit-Limit: 60
