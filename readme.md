@@ -8,9 +8,9 @@ The project features a robust system for maintaining the questions via the Web
 UI. Coupled with the Web UI is the API through which the quiz games can access
 the questions. Questions can be organized by categories for easier maintenance.
 
-- Extensive interface for managing questions
-- Robust [REST API](https://en.wikipedia.org/wiki/Representational_state_transfer)
-- Organising questions via categories
+- Extensive interface for managing questions.
+- Robust [REST API](https://en.wikipedia.org/wiki/Representational_state_transfer).
+- Organising questions via categories.
 - Review changes before publishing.
 
 ## Documentation
