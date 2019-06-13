@@ -21,4 +21,14 @@ class Question extends Model
         'answer3',
         'answer4'
     ];
+
+    /**
+     * Define a relationship between Category and Question.
+     *
+     * @var \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function category()
+    {
+        return $this->belongsTo('App\Category');
+    }
 }
