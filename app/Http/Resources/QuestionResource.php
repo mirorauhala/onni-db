@@ -26,8 +26,8 @@ class QuestionResource extends JsonResource
             'explanation' => $this->explanation,
             'difficulty' => $this->difficulty,
             'category' => new CategoryResource(Category::find($this->category_id)),
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
+            'created_at' => $this->created_at->format('d/m/Y H:i'),
+            'updated_at' => $this->updated_at->format('d/m/Y H:i'),
         ];
     }
 }

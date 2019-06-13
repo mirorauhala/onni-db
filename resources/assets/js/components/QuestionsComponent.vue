@@ -38,7 +38,7 @@
                     { key: 'question', sortable: true},
                     { key: 'difficulty', sortable: true},
                     { key: 'is_enabled', sortable: true},
-                    { key: 'category_id', sortable: true},
+                    { key: 'category.category', label: 'Category', sortable: true},
                     { key: 'created_at', sortable: true},
                     { key: 'updated_at', sortable: true},
                     { key: 'actions', label: 'Actions'},
@@ -46,7 +46,8 @@
             }
         },
         mounted() {
-            this.items = window.Questions.data;
+            axios.get('/api/v3/question')
+                .then((response) => this.items = response.data.data);
         },
         methods: {
             edit(item, index, button) {

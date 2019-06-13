@@ -26,11 +26,7 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        $questions = Question::paginate(30);
-
-        return view('questions.index')->with([
-            'questions' => $questions
-        ]);
+        return view('questions.index');
     }
 
     /**

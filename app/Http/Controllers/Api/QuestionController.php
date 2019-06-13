@@ -30,9 +30,15 @@ class QuestionController extends Controller
             $query->where('difficulty', $request->difficulty);
         });
 
-        $questions->when($request->random, function($query) use ($request) {
-            $query->inRandomOrder();
-        });
+        $questions->when(
+            $request->random,
+            function($query) use ($request) {
+                $query->inRandomOrder();
+            },
+            function($query) {
+                $query->orderBy('updated_at', 'DESC');
+            }
+        );
 
         return QuestionResource::collection($questions->paginate(30));
     }

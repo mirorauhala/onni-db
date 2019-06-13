@@ -4,16 +4,8 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
-            @if(count($questions))
-                <!-- TODO: use API -->
-                <script>
-                    window.Questions = {!! $questions->toJSON() !!}
-                </script>
-                <o-questions></o-questions>
-                <!-- TODO: use Vue pagination -->
-            @else
-                <p>There are no questions.</p>
-            @endif
+            <o-questions></o-questions>
+            <!-- TODO: use Vue pagination -->
         </div>
     </div>
 </div>
