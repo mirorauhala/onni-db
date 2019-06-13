@@ -15,3 +15,7 @@ Route::prefix('v1')->group(function () {
 Route::prefix('v2')->group(function () {
     Route::get('question', 'Endpoints\EndpointTwo@getQuestion')->name('api.v2.getQuestion');
 });
+
+Route::prefix('v3')->group(function() {
+    Route::apiResource('question', 'Api\QuestionController');
+});
