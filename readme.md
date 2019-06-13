@@ -27,6 +27,7 @@ also listed in *italics*.
 **The necessary dependencies are installed by Docker.**
 
 - [Docker](https://www.docker.com/)
+- [Composer](http://getcomposer.org/)
 - [PHP](https://php.net/) >= 7.2.0
   - [BCMath](https://www.php.net/manual/en/book.bc.php) PHP Extension
   - [Ctype](https://www.php.net/manual/en/book.ctype.php) PHP Extension
