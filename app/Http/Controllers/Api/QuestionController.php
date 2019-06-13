@@ -26,7 +26,7 @@ class QuestionController extends Controller
             $query->where('category_id', $request->category);
         });
 
-        $questions = Question::when($request->difficulty, function($query) use ($request) {
+        $questions->when($request->difficulty, function($query) use ($request) {
             $query->where('difficulty', $request->difficulty);
         });
 
