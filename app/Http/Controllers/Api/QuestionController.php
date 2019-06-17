@@ -2,26 +2,34 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Category;
 use App\Question;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\QuestionResource;
+use App\Http\Requests\QuestionIndexRequest;
+use App\Http\Requests\QuestionStoreRequest;
+use App\Http\Requests\QuestionUpdateRequest;
 
 class QuestionController extends Controller
 {
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct() {
+        $this->middleware('auth:api')->except(['index', 'show']);
+    }
+
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return App\Http\Requests\QuestionIndexRequest
      */
-    public function index(Request $request)
+    public function index(QuestionIndexRequest $request)
     {
-        $this->validate($request, [
-            'category' => 'nullable|exists:categories,id',
-            'difficulty' => 'nullable|integer|between:1,3',
-            'random' => 'nullable|boolean'
-        ]);
-
         $questions = Question::when($request->category, function($query) use ($request) {
             $query->where('category_id', $request->category);
         });
@@ -46,45 +54,71 @@ class QuestionController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  App\Http\Requests\QuestionStoreRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(QuestionStoreRequest $request)
     {
-        //
+        $question = Question::create([
+            'question' => $request->question,
+            'difficulty' => $request->difficulty,
+            'explanation' => $request->explanation,
+            'category_id' => $request->category_id,
+            'is_enabled' => $request->question_enabled == 1,
+            'answer1' => $request->answer1,
+            'answer2' => $request->answer2,
+            'answer3' => $request->answer3,
+            'answer4' => $request->answer4,
+        ]);
+
+        return $question;
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  App\Question  $question
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Question $question)
     {
-        //
+        return $question;
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  App\Question  $question
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(QuestionUpdateRequest $request, Question $question)
     {
-        //
+        $question->update([
+            'question' => $request->question,
+            'difficulty' => $request->difficulty,
+            'explanation' => $request->explanation,
+            'category_id' => $request->category_id,
+            'is_enabled' => $request->question_enabled == 1,
+            'answer1' => $request->answer1,
+            'answer2' => $request->answer2,
+            'answer3' => $request->answer3,
+            'answer4' => $request->answer4,
+        ]);
+
+        return $question;
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  App\Question  $question
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Question $question)
     {
-        //
+        $question->destroy();
+
+        return ['status' => 'true'];
     }
 }

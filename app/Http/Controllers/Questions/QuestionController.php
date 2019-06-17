@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Questions;
 
 use App\Category;
 use App\Question;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\QuestionStoreRequest;
 
 class QuestionController extends Controller
 {
@@ -48,19 +49,8 @@ class QuestionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(QuestionStoreRequest $request)
     {
-        $this->validate($request, [
-            'category' => 'required|min:1',
-            'question' => 'required|min:1',
-            'difficulty' => 'required|between:1,3',
-            'explanation' => 'required|min:1',
-            'answer1' => 'required|min:1',
-            'answer2' => 'required|min:1',
-            'answer3' => 'required|min:1',
-            'answer4' => 'required|min:1'
-        ]);
-
         $question = $this->store_question($request);
 
         return redirect()
@@ -76,9 +66,8 @@ class QuestionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function edit($question, Request $request)
+    public function edit(Question $question, Request $request)
     {
-        $question = Question::findOrFail($question);
         $categories = Category::all();
 
         return view('questions.edit')
@@ -97,7 +86,7 @@ class QuestionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update($question, Request $request)
+    public function update(Question $question, Request $request)
     {
         $this->validate($request, [
             'category' => 'required|min:1',
@@ -109,8 +98,6 @@ class QuestionController extends Controller
             'answer3' => 'required|min:1',
             'answer4' => 'required|min:1',
         ]);
-
-        $question = Question::findOrFail($question);
 
         $this->update_question($question, $request);
 
@@ -132,9 +119,8 @@ class QuestionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function delete($question, Request $request)
+    public function delete(Question $question, Request $request)
     {
-        $question = Question::findOrFail($question);
         return view('questions.delete')
             ->with([
                 'question' => $question
@@ -146,7 +132,7 @@ class QuestionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function destroy($question, Request $request)
+    public function destroy(Question $question, Request $request)
     {
         Question::destroy($question);
         return redirect()
@@ -162,7 +148,7 @@ class QuestionController extends Controller
      *
      * @return App\Question
      */
-    private function store_question(Request $request)
+    protected function store_question(Request $request)
     {
         $category = Category::find($request->category);
 
@@ -187,7 +173,7 @@ class QuestionController extends Controller
      *
      * @return App\Question
      */
-    private function update_question($question, Request $request)
+    protected function update_question($question, Request $request)
     {
         $question->category_id = $request->category;
         $question->question = $request->question;
