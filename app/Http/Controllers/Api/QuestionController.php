@@ -38,6 +38,10 @@ class QuestionController extends Controller
             $query->where('difficulty', $request->difficulty);
         });
 
+        $questions->when($request->filter, function ($query) use ($request) {
+            $query->orWhere('question', 'LIKE', "%" .$request->filter. "%");
+        });
+
         $questions->when(
             $request->random,
             function($query) use ($request) {
