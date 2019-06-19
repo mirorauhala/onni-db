@@ -18,7 +18,7 @@ class Category extends Model
     /**
      * Define a relationship between Category and Question.
      *
-     * @var void
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function questions()
     {

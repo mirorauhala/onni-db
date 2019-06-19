@@ -25,7 +25,7 @@ class Question extends Model
     /**
      * Define a relationship between Category and Question.
      *
-     * @var \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function category()
     {
