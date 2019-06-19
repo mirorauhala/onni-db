@@ -113,7 +113,7 @@ class QuestionController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  App\Question  $question
-     * @return \Illuminate\Http\Response
+     * @return array
      */
     public function destroy(Question $question)
     {
