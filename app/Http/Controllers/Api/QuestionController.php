@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Category;
 use App\Question;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -19,7 +18,8 @@ class QuestionController extends Controller
      *
      * @return void
      */
-    public function __construct() {
+    public function __construct()
+    {
         $this->middleware('auth:api')->except(['index', 'show']);
     }
 
@@ -30,11 +30,11 @@ class QuestionController extends Controller
      */
     public function index(QuestionIndexRequest $request)
     {
-        $questions = Question::when($request->category, function($query) use ($request) {
+        $questions = Question::when($request->category, function ($query) use ($request) {
             $query->where('category_id', $request->category);
         });
 
-        $questions->when($request->difficulty, function($query) use ($request) {
+        $questions->when($request->difficulty, function ($query) use ($request) {
             $query->where('difficulty', $request->difficulty);
         });
 
@@ -44,10 +44,10 @@ class QuestionController extends Controller
 
         $questions->when(
             $request->random,
-            function($query) use ($request) {
+            function ($query) use ($request) {
                 $query->inRandomOrder();
             },
-            function($query) {
+            function ($query) {
                 $query->orderBy('updated_at', 'DESC');
             }
         );
