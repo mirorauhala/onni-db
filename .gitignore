@@ -10,3 +10,4 @@ Homestead.yaml
 .DS_Store
 .phpunit.*
 .php_cs.*
+/_ide_helper.php
