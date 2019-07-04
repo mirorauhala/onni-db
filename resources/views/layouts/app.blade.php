@@ -18,8 +18,8 @@
 
                 <b-collapse id="nav-collapse" is-nav>
                     <b-navbar-nav>
-                        <b-nav-item href="{{ route('question.all') }}" {{ active(['question*']) }}>{{ __('nav.questions') }}</b-nav-item>
-                        <b-nav-item href="{{ route('category.all') }}" {{ active(['category*']) }}>{{ __('nav.categories') }}</b-nav-item>
+                        <b-nav-item href="{{ route('question.all') }}" {{ active(['question*']) }}>Kysymykset</b-nav-item>
+                        <b-nav-item href="{{ route('category.all') }}" {{ active(['category*']) }}>Kategoriat</b-nav-item>
                     </b-navbar-nav>
 
                     <b-navbar-nav class="ml-auto">
