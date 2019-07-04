@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8">
             <div class="panel panel-default">
-                <div class="panel-heading">Add new question</div>
+                <div class="panel-heading">Lisää uusi kysymys</div>
 
                 <div class="panel-body">
                     @if(count($categories) > 0)
@@ -13,7 +13,7 @@
                             {{ csrf_field() }}
 
                             <div class="form-group{{ $errors->has('category') ? ' has-error' : '' }}">
-                                <label for="category">Category</label>
+                                <label for="category">Kategoria</label>
                                 <select class="form-control" name="category">
                                     @foreach($categories as $category)
                                         <option value="{{ $category->id }}" {{ ($category->id == old('category')) ? 'selected=selected' : '' }}>{{ $category->category }}</option>
@@ -28,7 +28,7 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('question') ? ' has-error' : '' }}">
-                                <label for="question">Question</label>
+                                <label for="question">Kysymys</label>
                                 <input type="text" name="question" class="form-control" value="{{ old('question') }}">
 
                                 @if ($errors->has('question'))
@@ -41,7 +41,7 @@
                                 <div class="checkbox">
                                     <label>
                                         <input type="checkbox" name="question_enabled" value="1" checked="true">
-                                        Is the question enabled?
+                                        Onko kysymys käytössä?
                                     </label>
                                 </div>
 
@@ -53,7 +53,7 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('difficulty') ? ' has-error' : '' }}">
-                                <label for="difficulty">Difficulty</label>
+                                <label for="difficulty">Vaikeusaste</label>
                                 <select class="form-control" name="difficulty">
                                     <option value="1" {{ (1 == old('difficulty')) ? 'selected=selected' : '' }}>1</option>
                                     <option value="2" {{ (2 == old('difficulty')) ? 'selected=selected' : '' }}>2</option>
@@ -68,7 +68,7 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('answer1') ? ' has-error' : '' }}">
-                                <label for="answer1">Answer 1 <small>This must be the correct answer</small></label>
+                                <label for="answer1">Vastaus 1 <small>Tämän on oltava oikea vastaus</small></label>
                                 <input type="text" class="form-control" name="answer1" value="{{ old('answer1') }}">
 
                                 @if ($errors->has('answer1'))
@@ -79,7 +79,7 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('answer2') ? ' has-error' : '' }}">
-                                <label for="answer2">Answer 2</label>
+                                <label for="answer2">Vastaus 2</label>
                                 <input type="text" class="form-control" name="answer2" value="{{ old('answer2') }}">
 
                                 @if ($errors->has('answer2'))
@@ -90,7 +90,7 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('answer3') ? ' has-error' : '' }}">
-                                <label for="answer3">Answer 3</label>
+                                <label for="answer3">Vastaus 3</label>
                                 <input type="text" class="form-control" name="answer3" value="{{ old('answer3') }}">
 
                                 @if ($errors->has('answer3'))
@@ -101,7 +101,7 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('answer4') ? ' has-error' : '' }}">
-                                <label for="answer4">Answer 4</label>
+                                <label for="answer4">Vastaus 4</label>
                                 <input type="text" class="form-control" name="answer4" value="{{ old('answer4') }}">
 
                                 @if ($errors->has('answer4'))
@@ -112,7 +112,7 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('explanation') ? ' has-error' : '' }}">
-                                <label for="explanation">Correct answer explanation</label>
+                                <label for="explanation">Oikean vastauksen selitys</label>
                                 <input type="text" class="form-control" name="explanation" value="{{ old('explanation') }}">
 
                                 @if ($errors->has('explanation'))
@@ -122,10 +122,10 @@
                                 @endif
                             </div>
 
-                            <input type="submit" class="btn btn-primary" value="Add">
+                            <input type="submit" class="btn btn-primary" value="Luo">
                         </form>
                     @else
-                        <p>There are no categories. You can create a category <a href="{{ route('category.new') }}">here</a>.</p>
+                        <p>Kategorioita ei ole vielä luotu. Voit luoda uuden kategorian <a href="{{ route('category.new') }}">täällä</a>.</p>
                     @endif
 
                 </div>

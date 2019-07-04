@@ -10,8 +10,8 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Category</th>
-                            <th>Actions</th>
+                            <th>Kategoria</th>
+                            <th>Toiminnot</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -22,11 +22,11 @@
                                 <td>
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Actions <span class="caret"></span>
+                                            Toiminnot <span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="{{ route('category.edit', ['category' => $category->id]) }}">Edit</a></li>
-                                            <li><a class="dropdown-item" href="{{ route('category.delete', ['category' => $category->id]) }}">Delete</a></li>
+                                            <li><a class="dropdown-item" href="{{ route('category.edit', ['category' => $category->id]) }}">Muokkaa</a></li>
+                                            <li><a class="dropdown-item" href="{{ route('category.delete', ['category' => $category->id]) }}">Poista</a></li>
                                         </ul>
                                     </div>
                                 </td>
@@ -36,7 +36,7 @@
                 </table>
                 {{ $categories->links() }}
             @else
-                <p>There are no categories.</p>
+                <p>Ei kategorioita.</p>
             @endif
         </div>
     </div>

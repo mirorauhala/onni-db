@@ -5,13 +5,13 @@
     <div class="row">
         <div class="col-md-8">
             <div class="panel panel-default">
-                <div class="panel-heading">Edit category</div>
+                <div class="panel-heading">Muokkaa kategoriaa</div>
 
                 <div class="panel-body">
                     <form method="post" action="{{ route('category.edit', ['category' => $category->id]) }}" autocomplete="off">
                         {{ csrf_field() }}
                         <div class="form-group{{ $errors->has('category') ? ' has-error' : '' }}">
-                            <label for="question">Category</label>
+                            <label for="question">Kategoria</label>
                             <input type="text" name="category" class="form-control" value="{{ $category->category }}">
 
                             @if ($errors->has('category'))
@@ -21,7 +21,7 @@
                             @endif
                         </div>
 
-                        <input type="submit" class="btn btn-primary" value="Update">
+                        <input type="submit" class="btn btn-primary" value="Tallenna">
                     </form>
 
                 </div>

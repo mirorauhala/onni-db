@@ -27,7 +27,7 @@
                             <b-nav-item href="{{ route('login') }}" {{ active(['login*']) }}>{{ __('nav.login') }}</b-nav-item>
                         @else
                             <b-nav-item-dropdown text="{{ Auth::user()->name }}" right>
-                                <b-dropdown-item href="{{ route('settings') }}">Settings</b-dropdown-item>
+                                <b-dropdown-item href="{{ route('settings') }}">Asetukset</b-dropdown-item>
                                 <b-dropdown-item href="#"
                                                 onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">{{ __('nav.logout') }}</b-dropdown-item>

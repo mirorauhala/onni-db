@@ -5,14 +5,14 @@
     <div class="row">
         <div class="col-md-8">
             <div class="panel panel-default">
-                <div class="panel-heading">Edit question</div>
+                <div class="panel-heading">Muokkaa kysymystä</div>
 
                 <div class="panel-body">
                     <form method="post" action="{{ route('question.edit', ['question' => $question->id]) }}" autocomplete="off">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('category') ? ' has-error' : '' }}">
-                            <label for="category">Category</label>
+                            <label for="category">Kategoria</label>
                             <select class="form-control" name="category">
                                 @foreach($categories as $category)
                                     <option value="{{ $category->id }}" {{ ($category->id == $question->category_id) ? 'selected=selected' : '' }}>{{ $category->category }}</option>
@@ -27,7 +27,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('question') ? ' has-error' : '' }}">
-                            <label for="question">Question</label>
+                            <label for="question">Kysymys</label>
                             <input type="text" name="question" class="form-control" value="{{ $question->question }}">
 
                             @if ($errors->has('question'))
@@ -41,7 +41,7 @@
                             <div class="checkbox">
                                 <label>
                                     <input type="checkbox" name="question_enabled" value="1" {{ ($question->is_enabled == 1) ? 'checked=checked' : '' }}>
-                                    Is the question enabled?
+                                    Onko kysymys käytössä?
                                 </label>
                             </div>
 
@@ -53,7 +53,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('difficulty') ? ' has-error' : '' }}">
-                            <label for="difficulty">Difficulty</label>
+                            <label for="difficulty">Vaikeusaste</label>
                             <select class="form-control" name="difficulty">
                                 <option value="1" {{ (1 == $question->difficulty) ? 'selected=selected' : '' }}>1</option>
                                 <option value="2" {{ (2 == $question->difficulty) ? 'selected=selected' : '' }}>2</option>
@@ -68,7 +68,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('answer1') ? ' has-error' : '' }}">
-                            <label for="answer1">Answer 1 <small>This must be the correct answer</small></label>
+                            <label for="answer1">Vastaus 1 <small>Tämän on oltava oikea vastaus</small></label>
                             <input type="text" class="form-control" name="answer1" value="{{ $question->answer1 }}">
 
                             @if ($errors->has('answer1'))
@@ -79,7 +79,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="answer2">Answer 2</label>
+                            <label for="answer2">Vastaus 2</label>
                             <input type="text" class="form-control" name="answer2" value="{{ $question->answer2 }}">
 
                             @if ($errors->has('answer2'))
@@ -90,7 +90,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="answer3">Answer 3</label>
+                            <label for="answer3">Vastaus 3</label>
                             <input type="text" class="form-control" name="answer3" value="{{ $question->answer3 }}">
 
                             @if ($errors->has('answer3'))
@@ -101,7 +101,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="answer4">Answer 4</label>
+                            <label for="answer4">Vastaus 4</label>
                             <input type="text" class="form-control" name="answer4" value="{{ $question->answer4 }}">
 
                             @if ($errors->has('answer4'))
@@ -112,7 +112,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('explanation') ? ' has-error' : '' }}">
-                            <label for="explanation">Correct answer explanation</label>
+                            <label for="explanation">Oikean vastauksen selitys</label>
                             <input type="text" class="form-control" name="explanation" value="{{ $question->explanation }}">
 
                             @if ($errors->has('explanation'))
@@ -122,7 +122,7 @@
                             @endif
                         </div>
 
-                        <input type="submit" class="btn btn-primary" value="Update">
+                        <input type="submit" class="btn btn-primary" value="Tallenna">
                     </form>
 
                 </div>
