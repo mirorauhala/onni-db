@@ -26,7 +26,8 @@ class QuestionController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return App\Http\Requests\QuestionIndexRequest
+     * @param  QuestionIndexRequest  $request
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
     public function index(QuestionIndexRequest $request)
     {
@@ -44,7 +45,7 @@ class QuestionController extends Controller
 
         $questions->when(
             $request->random,
-            function ($query) use ($request) {
+            function ($query) {
                 $query->inRandomOrder();
             },
             function ($query) {
@@ -52,7 +53,7 @@ class QuestionController extends Controller
             }
         );
 
-        return QuestionResource::collection($questions->paginate(30));
+        return QuestionResource::collection($questions->with('category')->paginate(30));
     }
 
     /**
