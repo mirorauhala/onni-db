@@ -25,7 +25,7 @@ class QuestionResource extends JsonResource
             'answer4' => $this->answer4,
             'explanation' => $this->explanation,
             'difficulty' => $this->difficulty,
-            'category' => new CategoryResource(Category::find($this->category_id)),
+            'category' => new CategoryResource($this->category),
             'created_at' => $this->created_at->format('d/m/Y H:i'),
             'updated_at' => $this->updated_at->format('d/m/Y H:i'),
         ];
