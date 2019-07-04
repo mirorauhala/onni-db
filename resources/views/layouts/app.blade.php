@@ -30,7 +30,7 @@
                                 <b-dropdown-item href="{{ route('settings') }}">Asetukset</b-dropdown-item>
                                 <b-dropdown-item href="#"
                                                 onclick="event.preventDefault();
-                                                        document.getElementById('logout-form').submit();">{{ __('nav.logout') }}</b-dropdown-item>
+                                                        document.getElementById('logout-form').submit();">Kirjaudu ulos</b-dropdown-item>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     {{ csrf_field() }}
                                 </form>
