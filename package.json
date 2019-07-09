@@ -14,7 +14,7 @@
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.0-rc.25",
     "cross-env": "^5.1",
-    "laravel-mix": "^4.0.16",
+    "laravel-mix": "^4.1.2",
     "lodash": "^4.17.5",
     "popper.js": "^1.12",
     "resolve-url-loader": "^3.1.0",
