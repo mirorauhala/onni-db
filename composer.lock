@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f9a55bcc739080d125d731a1a70c91dd",
+    "content-hash": "9b161ed3dbfac6ad2ef7f80958eecf83",
     "packages": [
         {
             "name": "defuse/php-encryption",
@@ -906,16 +906,16 @@
         },
         {
             "name": "itsgoingd/clockwork",
-            "version": "v3.1.4",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itsgoingd/clockwork.git",
-                "reference": "529b6f9e2ce487b900213cf1d0694d0aebd5977f"
+                "reference": "26e248dc599b2326b19cb1269947f47a85499d4c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itsgoingd/clockwork/zipball/529b6f9e2ce487b900213cf1d0694d0aebd5977f",
-                "reference": "529b6f9e2ce487b900213cf1d0694d0aebd5977f",
+                "url": "https://api.github.com/repos/itsgoingd/clockwork/zipball/26e248dc599b2326b19cb1269947f47a85499d4c",
+                "reference": "26e248dc599b2326b19cb1269947f47a85499d4c",
                 "shasum": ""
             },
             "require": {
@@ -960,7 +960,7 @@
                 "profiling",
                 "slim"
             ],
-            "time": "2019-03-21T20:24:39+00:00"
+            "time": "2019-07-09T20:20:57+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
