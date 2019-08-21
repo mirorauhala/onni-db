@@ -23,5 +23,7 @@
     "vue": "^2.6.10",
     "vue-template-compiler": "^2.6.10"
   },
-  "dependencies": {}
+  "dependencies": {
+    "puppeteer": "^1.18.1"
+  }
 }
