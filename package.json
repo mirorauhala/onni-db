@@ -13,17 +13,17 @@
     "axios": "^0.19",
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.0-rc.28",
-    "cross-env": "^5.1",
+    "cross-env": "^5.2.1",
     "laravel-mix": "^4.1.2",
     "lodash": "^4.17.15",
     "popper.js": "^1.12",
     "resolve-url-loader": "^3.1.0",
-    "sass": "^1.22.9",
-    "sass-loader": "^7.2.0",
+    "sass": "^1.22.10",
+    "sass-loader": "^7.3.1",
     "vue": "^2.6.10",
     "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
-    "puppeteer": "^1.18.1"
+    "puppeteer": "^1.19.0"
   }
 }
