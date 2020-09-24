@@ -35,12 +35,12 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \OWS\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
-            \OWS\Http\Middleware\Cors::class,
         ],
 
         'api' => [
             'throttle:60,1',
             'bindings',
+            \OWS\Http\Middleware\Cors::class,
         ],
     ];
 
