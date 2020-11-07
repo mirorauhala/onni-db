@@ -86,6 +86,7 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
+                                    <li><a href="{{ route('users.index') }}">User management</a></li>
                                     <li><a href="{{ route('settings.profile') }}">Settings</a></li>
                                     <li>
                                         <a href="{{ route('logout') }}"

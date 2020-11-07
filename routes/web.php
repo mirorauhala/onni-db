@@ -50,3 +50,12 @@ Route::post('/settings', 'Settings\SettingsController@store');
 
 Route::get('/settings/password', 'Settings\PasswordController@index')->name('settings.password');
 Route::post('/settings/password', 'Settings\PasswordController@store');
+
+/* User management */
+Route::get('/users', 'UserController@index')->name('users.index');
+Route::get('/users/create', 'UserController@create')->name('users.create');
+Route::post('/users', 'UserController@store');
+Route::get('/users/{user}/edit', 'UserController@edit')->name('users.edit');
+Route::post('/users/{user}/edit', 'UserController@update')->name('users.update');
+Route::delete('/users/{user}', 'UserController@destroy')->name('users.destroy');
+
