@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -61,7 +61,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Onni Web Services') }}
+                        {{ config('app.name') }}
                     </a>
                 </div>
 
@@ -71,7 +71,6 @@
                         @if (Auth::check())
                             <li {{ active(['question*']) }}><a href="{{ route('question.all') }}">Questions</a></li>
                             <li {{ active(['category*']) }}><a href="{{ route('category.all') }}">Categories</a></li>
-                            <li {{ active(['settings*']) }}><a href="{{ route('settings.profile') }}">Settings</a></li>
                         @endif
                     </ul>
 
