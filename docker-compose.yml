@@ -1,20 +1,28 @@
 version: "3.1"
 services:
 
-    webserver:
-      image: nginx:alpine
-      container_name: onnidb-webserver
-      working_dir: /application
-      volumes:
-          - .:/application
-          - ./phpdocker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
-      ports:
-       - "${WEB_PORT:-8080}:80"
+    web:
+        build:
+            dockerfile: ./docker/nginx/Dockerfile
+            context: .
+        container_name: onnidb-web
+        volumes:
+            - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+        ports:
+            - "${WEB_PORT:-8080}:80"
+        depends_on:
+            - php-fpm
 
     php-fpm:
-      build: phpdocker/php-fpm
-      container_name: onnidb-php-fpm
-      working_dir: /application
-      volumes:
-        - .:/application
-        - ./phpdocker/php-fpm/php-ini-overrides.ini:/etc/php/7.4/fpm/conf.d/99-overrides.ini
+        build:
+            dockerfile: ./docker/php-fpm/Dockerfile
+            context: .
+        container_name: onnidb-php
+        env_file: .dev.php.env
+        volumes:
+            - ./storage:/usr/share/onnidb/storage:rw
+            - ./database.sqlite:/usr/share/onnidb/database/database.sqlite
+
+    redis:
+        image: redis
+        container_name: onnidb-redis
