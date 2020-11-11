@@ -26,3 +26,5 @@ services:
     redis:
         image: redis
         container_name: onnidb-redis
+        ports:
+            - 6380:6379
