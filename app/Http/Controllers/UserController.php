@@ -41,7 +41,11 @@ class UserController extends Controller
      */
     public function store(UserCreateRequest $request)
     {
-        $user = new User($request->validated());
+        $user = new User([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password)
+        ]);
         $user->save();
 
         return redirect()
